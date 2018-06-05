@@ -8,16 +8,23 @@ I'm creating this project to learn [Svelte](https://svelte.technology/ "Svelte")
 
 ## Tasks
 
+### General
+
 - [x] Initializing the repository
 - [x] Using window frame [from Componia](https://github.com/tareifz/componia "Componia")
 - [x] Creating color picker component
-- [] How to use the scheme for your editor (Routes)
-	- [] Emacs
-	- [] Visual Studio Code
-	- [] Sublime Text
-- [] About (Route)
-- [] Download the scheme for a given editor
-- [] Generate new random scheme
+- [ ] Download the scheme for a given editor
+- [ ] Generate new random scheme
+
+### Routes
+
+How to use the scheme for your editor:
+
+- [ ] Emacs
+- [ ] Visual Studio Code
+- [ ] Sublime Text
+
+- [ ] About
 
 ---
 
