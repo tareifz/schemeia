@@ -1,0 +1,75 @@
+<svelte:head>
+		<title>Schemeia | Color Schemes Generator</title>
+</svelte:head>
+
+<div class="window-container">
+		<Window title="Color Scheme">
+				<pre>{@html `let sortedFruits = {};
+Object.keys(fruits).sort((a, b) => {
+	return a.toLowerCase().localeCompare(b.toLowerCase());
+}).forEach(function(key) {
+	sortedFruits[key] = fruits[key];
+});
+console.log(sortedFruits);
+
+/*
+{
+apples: false,
+Bananas: true,
+Oranges: true
+}
+*/`}
+				</pre>
+		</Window>
+</div>
+
+<div class="color-picker-container">
+		<div class="color-picker"><ColorPicker></ColorPicker></div>
+		<div class="color-picker"><ColorPicker></ColorPicker></div>
+		<div class="color-picker"><ColorPicker></ColorPicker></div>
+		<div class="color-picker"><ColorPicker></ColorPicker></div>
+		<div class="color-picker"><ColorPicker></ColorPicker></div>
+		<div class="color-picker"><ColorPicker></ColorPicker></div>
+</div>
+
+<script>
+ import Window from '../components/Window.html';
+ import ColorPicker from '../components/ColorPicker.html';
+
+ export default {
+		 data() {
+				 return {
+						 snippet: ``
+				 }
+		 },
+		 components: {
+				 Window,
+				 ColorPicker,
+		 }
+ }
+</script>
+
+<style>
+ pre {
+		 margin: 0;
+		 padding: 1em;
+ }
+ .window-container {
+		 display: flex;
+		 justify-content: center;
+		 margin-top: 1em;
+ }
+ .color-picker-container {
+		 display: flex;
+		 justify-content: center;
+		 align-items: center;
+		 flex-wrap: wrap;
+		 margin-top: 1.5em;
+		 padding: 1em;
+ }
+ .color-picker-container .color-picker {
+		 width: 30%;
+		 height: 200px;
+ }
+
+</style>

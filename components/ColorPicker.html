@@ -1,0 +1,48 @@
+<div class="container" style="background-color: rgb({red}, {green}, {blue});">
+		<Slider color="red" lightColor="rgba(255, 0, 0, 0.2)" bind:slider="sliderRed">
+				<span style="color: {textColor};">R: </span>
+		</Slider>
+		<Slider color="green" lightColor="rgba(0, 255, 0, 0.2)" bind:slider="sliderGreen">
+				<span style="color: {textColor};">G: </span>
+		</Slider>
+		<Slider color="blue" lightColor="rgba(0, 0, 255, 0.2)" bind:slider="sliderBlue">
+				<span style="color: {textColor};">B: </span>
+		</Slider>
+</div>
+
+<script>
+ export default {
+		 components: {
+				 Slider: '../components/Slider.html',
+		 },
+
+		 data() {
+				 return {
+						 sliderRed: -256,
+						 sliderGreen: -256,
+						 sliderBlue: -256,
+				 }
+		 },
+
+		 computed: {
+				 red: ({ sliderRed }) => sliderRed + 256,
+				 green: ({ sliderGreen }) => sliderGreen + 256,
+				 blue: ({ sliderBlue }) => sliderBlue + 256,
+				 textColor: ({ red, green, blue }) => {
+						 let yiq = ((red * 299) + (green * 587) + (blue * 114)) / 1000;
+						 return (yiq >= 128) ? '#333333' : 'white';
+				 },
+		 },
+ }
+</script>
+
+<style>
+ .container {
+		 width: 100%;
+		 height: 100%;
+		 display: flex;
+		 flex-direction: column;
+		 justify-content: center;
+		 align-items: center;
+ }
+</style>

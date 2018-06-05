@@ -1,0 +1,96 @@
+<div class="slider-container">
+		<i><slot></slot></i>
+		<div class="slider-background"
+				 on:mousemove="mouseMove(event)"
+				 on:mouseleave="mouseLeave(event)"
+				 on:click="mouseClick(event)">
+				<div class="slider-color" style="background-color: {color}; transform: translateX({slider}px);"></div>
+				<div class="light-slider-color"
+						 style="background-color: {lightColor}; transform: translateX({light_slider}px);"></div>
+				<div class="overlay"></div>
+		</div>
+</div>
+
+<script>
+ export default {
+		 events: {
+
+		 },
+
+		 methods: {
+				 mouseMove(e) {
+						 this.set({
+								 light_slider: e.layerX <= 256 ? (e.layerX - 256) : -256,
+						 });
+				 },
+
+				 mouseLeave(e) {
+						 this.set({
+								 light_slider: -256,
+						 });
+				 },
+
+				 mouseClick(e) {
+						 this.set({
+								 slider: e.layerX - 256,
+						 });
+				 },
+		 },
+
+		 data() {
+				 return {
+						 slider: -256,
+						 light_slider: -256,
+				 }
+		 }
+ }
+</script>
+
+
+<style>
+ .slider-container {
+		 display: flex;
+		 align-items: center;
+		 width: 300px;
+		 height: 20px;
+		 margin-bottom: 0.5em;
+ }
+
+ .slider-container > i {
+		 min-width: 44px;
+ }
+
+ .slider-background {
+		 position: relative;
+		 display: flex;
+		 width: 256px;
+		 height: 100%;
+		 border-radius: 5px;
+		 background-color: lightgrey;
+		 overflow: hidden;
+ }
+
+ .slider-color,
+ .light-slider-color {
+		 position: absolute;
+		 width: 100%;
+		 height: 100%;
+ }
+
+ .slider-color {
+		 z-index: 3;
+ }
+
+ .light-slider-color {
+		 z-index: 2;
+ }
+
+ .overlay {
+		 width: 100%;
+		 height: 100%;
+		 position: absolute;
+		 left: 0;
+		 z-index: 4;
+ }
+
+</style>

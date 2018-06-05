@@ -1,0 +1,131 @@
+<div class="componia-main-window">
+		<div class="componia-window-title">
+				<div class="componia-title-buttons">
+						<div class="componia-close">
+								<svg viewBox="0 0 6.4 6.4" xmlns="http://www.w3.org/2000/svg">
+										<polygon points="6.4 0.8 5.6 0 3.2 2.4 0.8 0 0 0.8 2.4 3.2 0 5.6 0.8 6.4 3.2 4 5.6 6.4 6.4 5.6 4 3.2" fill="#4d0000"/>
+								</svg>
+						</div>
+						<div class="componia-minimize">
+								<svg viewBox="0 0 8 1.1" xmlns="http://www.w3.org/2000/svg">
+										<rect width="8" height="1.1" fill="#995700"/>
+								</svg>
+						</div>
+						<div class="componia-maximize">
+								<svg class="fullscreen-svg" viewBox="0 0 6 5.9" xmlns="http://www.w3.org/2000/svg">
+										<path d="M5.4,0h-4L6,4.5V0.6C5.7,0.6,5.3,0.3,5.4,0z" fill="#006400"/>
+										<path d="m0.6 5.9h4l-4.6-4.5v3.9c0.3 0 0.6 0.3 0.6 0.6z" fill="#006400"/>
+								</svg>
+						</div>
+				</div>
+				<div class="componia-title-text-wrapper">
+						<div class="componia-title-text">
+								{title}
+						</div>
+				</div>
+		</div>
+		<div class="componia-window-content">
+				<slot></slot>
+		</div>
+</div>
+
+
+<style>
+ .componia-main-window {
+		 width: 800px;
+ }
+ .componia-window-title {
+		 display: flex;
+		 align-items: center;
+		 align-content: center;
+		 height: 24px;
+ }
+
+ .componia-title-buttons {
+		 -webkit-app-region: no-drag;
+		 display: flex;
+		 align-items: center;
+		 z-index: 999;
+ }
+
+ .componia-title-text-wrapper {
+		 display: flex;
+		 flex-grow: 2;
+		 justify-content: center;
+ }
+
+ .componia-title-text {
+		 margin: auto 0;
+		 align-self: center;
+		 position: relative;
+		 left: -27.5px;
+		 font-family: Arial, Helvetica, sans-serif;
+		 pointer-events: none;
+ }
+
+ .componia-close,
+ .componia-minimize,
+ .componia-maximize {
+		 display: inline-block;
+		 border-radius: 100%;
+		 width: 14px;
+		 height: 14px;
+		 margin: 5px 0;
+		 margin-left: 5px;
+		 line-height: 0;
+ }
+
+ .componia-close svg,
+ .componia-minimize svg,
+ .componia-maximize svg {
+		 position: relative;
+		 width:7px;
+		 height: 7px;
+		 top: 3.5px;
+		 left: 3.5px;
+		 opacity: 0;
+ }
+
+ .componia-title-buttons:hover .componia-close svg,
+ .componia-title-buttons:hover .componia-minimize svg,
+ .componia-title-buttons:hover .componia-maximize svg {
+		 opacity: 1;
+ }
+
+
+ .componia-window-title {
+		 background-color: rgb(255, 154, 2);
+ }
+
+ .componia-title-text {
+		 color: #EEEEEE;
+ }
+
+ .componia-window-content {
+		 background-color: #444444;
+ }
+
+ .componia-close {
+		 background-color: rgb(248, 86, 61);
+ }
+
+ .componia-minimize {
+		 background-color: rgb(251, 200, 78);
+ }
+
+ .componia-maximize {
+		 background-color: rgb(67, 191, 88);
+ }
+
+ .componia-close:hover {
+		 background-color: rgb(252, 93, 69);
+ }
+
+ .componia-minimize:hover {
+		 background-color: rgb(236, 162, 2);
+ }
+
+ .componia-maximize:hover {
+		 background-color: rgb(16, 173, 43);
+ }
+</style>
