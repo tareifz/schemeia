@@ -2,74 +2,90 @@
 		<title>Schemeia | Color Schemes Generator</title>
 </svelte:head>
 
-<div class="window-container">
-		<Window title="Color Scheme">
-				<pre>{@html `let sortedFruits = {};
-Object.keys(fruits).sort((a, b) => {
-	return a.toLowerCase().localeCompare(b.toLowerCase());
-}).forEach(function(key) {
-	sortedFruits[key] = fruits[key];
-});
-console.log(sortedFruits);
-
-/*
-{
-apples: false,
-Bananas: true,
-Oranges: true
-}
-*/`}
-				</pre>
-		</Window>
+<div class="main">
+		<a class="card emacs" href="./editor/emacs">
+				<div class="icon emacs"></div>
+				<div class="title">Emacs</div>
+		</a>
+		<a class="card vim" href="./editor/vim">
+				<div class="icon vim"></div>
+				<div class="title">Vim</div>
+		</a>
+		<a class="card vs-code" href="./editor/vscode">
+				<div class="icon vs-code"></div>
+				<div class="title">Visual Studio Code</div>
+		</a>
+		<a class="card sublime" href="./editor/sublime">
+				<div class="icon sublime"></div>
+				<div class="title">Sublime Text</div>
+		</a>
 </div>
 
-<div class="color-picker-container">
-		<div class="color-picker"><ColorPicker></ColorPicker></div>
-		<div class="color-picker"><ColorPicker></ColorPicker></div>
-		<div class="color-picker"><ColorPicker></ColorPicker></div>
-		<div class="color-picker"><ColorPicker></ColorPicker></div>
-		<div class="color-picker"><ColorPicker></ColorPicker></div>
-		<div class="color-picker"><ColorPicker></ColorPicker></div>
-</div>
-
-<script>
- import Window from '../components/Window.html';
- import ColorPicker from '../components/ColorPicker.html';
-
- export default {
-		 data() {
-				 return {
-						 snippet: ``
-				 }
-		 },
-		 components: {
-				 Window,
-				 ColorPicker,
-		 }
- }
-</script>
 
 <style>
- pre {
-		 margin: 0;
-		 padding: 1em;
- }
- .window-container {
-		 display: flex;
-		 justify-content: center;
-		 margin-top: 1em;
- }
- .color-picker-container {
+ .main {
+		 width: 100%;
+		 height: 100%;
 		 display: flex;
 		 justify-content: center;
 		 align-items: center;
-		 flex-wrap: wrap;
-		 margin-top: 1.5em;
-		 padding: 1em;
  }
- .color-picker-container .color-picker {
-		 width: 30%;
-		 height: 200px;
+ .card {
+		 width: 20%;
+		 height: 80%;
+		 text-decoration: none;
+		 transition: ease-in-out 0.1s;
  }
 
+ .card:hover {
+		 transition: ease-in-out 0.1s;
+		 transform: scale3d(1.1, 1.1, 1);
+		 z-index: 2;
+ }
+
+ .emacs {
+		 background-color: #7e5ab6;
+ }
+
+ .vim {
+		 background-color: #019833;
+ }
+
+ .vs-code {
+		 background-color: #0097fc;
+ }
+
+ .sublime {
+		 background-color: #ff9800;
+ }
+
+ .icon {
+		 height: 60%;
+ }
+
+ .icon.emacs {
+		 background: url('emacs-icon.svg') center no-repeat;
+ }
+
+ .icon.vim {
+		 background: url('vim-icon.svg') center no-repeat;
+ }
+
+ .icon.vs-code {
+		 background: url('vscode-icon.svg') center no-repeat;
+ }
+
+ .icon.sublime {
+		 background: url('sublime-icon.svg') center no-repeat;
+ }
+
+ .title {
+		 height: 40%;
+		 display: flex;
+		 justify-content: center;
+		 align-items: center;
+		 color: rgba(0, 0, 0, 0.5);
+		 font-size: 1.7em;
+		 font-weight: bold;
+ }
 </style>

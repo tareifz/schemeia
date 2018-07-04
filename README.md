@@ -6,6 +6,12 @@ I'm creating this project to learn [Svelte](https://svelte.technology/ "Svelte")
 
 ---
 
+## Screenshot
+
+![Schemeia Index](./resources/schemeia-index.png "Schemeia Index")
+
+---
+
 ## Tasks
 
 ### General

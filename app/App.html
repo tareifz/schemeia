@@ -1,9 +1,9 @@
-<Nav page={
-					props.path === '/' ? 'home' :
-					props.path === '/about' ? 'about' :
-					props.path.startsWith('/blog') ? 'blog' :
-					null
-					}/>
+<!-- <Nav page={
+		 props.path === '/' ? 'home' :
+		 props.path === '/about' ? 'about' :
+		 props.path.startsWith('/blog') ? 'blog' :
+		 null
+		 }/> -->
 
 <main>
 		<svelte:component this={Page} {...props}/>
@@ -13,15 +13,20 @@
  :global(*) {
 		 box-sizing: border-box;
  }
+
+ main {
+		 width: 100%;
+		 height: 100%;
+ }
 </style>
 
 <script>
  import Nav from '../components/Nav.html';
 
  export default {
-		 components: {
-				 Nav
-		 },
+		 /* components: {
+				Nav
+				}, */
 
 		 methods: {
 
