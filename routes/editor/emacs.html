@@ -1,0 +1,36 @@
+<svelte:head>
+		<title>Schemeia | Color Schemes Generator | Emacs</title>
+</svelte:head>
+
+<div class="page">
+		<div class="emacs-wrapper">
+				<Emacs title="Emacs Theme" bg="#222">
+						<p>Hello there, my name is Emacsoo</p>
+						<p>Can this be helpful??</p>
+						<p>I don't know!</p>
+				</Emacs>
+		</div>
+</div>
+
+<script>
+ export default {
+		 components: {
+				 Emacs: '../../components/Emacs'
+		 }
+ }
+</script>
+
+<style>
+ .page {
+		 display: flex;
+		 justify-content: center;
+		 align-items: center;
+		 background-color: #7e5ab6;
+		 padding-bottom: 2em;
+ }
+ .emacs-wrapper {
+		 max-width: 800px;
+		 min-width: 800px; /* This should be removed! */
+		 margin-top: 1em;
+ }
+</style>
